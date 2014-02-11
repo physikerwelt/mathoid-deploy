@@ -1,0 +1,6 @@
+# main source
+src/ usr/lib/mathoid/
+
+# node modules
+node_modules/ usr/lib/mathoid/
+package.json usr/lib/mathoid/
