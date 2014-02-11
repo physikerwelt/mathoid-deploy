@@ -7,9 +7,9 @@ DESC="Mathoid HTTP service"
 NAME=mathoid
 SCRIPT_PATH=/usr/lib/mathoid/src/mathoid.js
 DAEMON="/usr/bin/nodejs $SCRIPT_PATH"
-DAEMON_ARGS=""
+#DAEMON_ARGS=""
 PIDFILE=/var/run/$NAME.pid
-SCRIPTNAME=/etc/init.d/$NAME
+#SCRIPTNAME=/etc/init.d/$NAME
 
 # Exit if the package is not installed
 [ -e "$SCRIPT_PATH" ] || exit 0
@@ -21,9 +21,9 @@ SCRIPTNAME=/etc/init.d/$NAME
 if [ ! -z "$MATHOID_PORT" ];then
     export MATHOID_PORT="$MATHOID_PORT"
 fi
-if [ ! -z "$MATHOID_INTERFACE" ];then
-    export MATHOID_INTERFACE="$MATHOID_INTERFACE"
-fi
+#if [ ! -z "$MATHOID_INTERFACE" ];then
+#    export MATHOID_INTERFACE="$MATHOID_INTERFACE"
+#fi
 
 # Load the VERBOSE setting and other rcS variables
 . /lib/init/vars.sh
@@ -156,7 +156,6 @@ case "$1" in
 	esac
 	;;
   *)
-	#echo "Usage: $SCRIPTNAME {start|stop|restart|reload|force-reload}" >&2
 	echo "Usage: $SCRIPTNAME {start|stop|status|restart|force-reload}" >&2
 	exit 3
 	;;
